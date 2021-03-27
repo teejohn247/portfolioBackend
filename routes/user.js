@@ -34,6 +34,8 @@ import viewBlog from '../controller/viewBlog';
 import viewCategory from '../controller/viewCategory';
 import viewContact from '../controller/viewContact';
 import viewServices from '../controller/viewServices';
+import viewAbout from '../controller/viewAbout';
+
 // import adminFilter from '../controller/adminFilter';
 // import admins from '../controller/totalAdmins';
 // import users from '../controller/totalUsers';
@@ -57,6 +59,7 @@ import viewServices from '../controller/viewServices';
 // import delComment from '../controller/delComment';
 
 import auth from '../middleware/auth';
+import editServices from '../controller/editServices';
 // import adminBookings from '../controller/adminBookings';
 // import delAdmin from '../controller/delAdmin';
 // import userPassword from '../controller/userPassword';
@@ -87,14 +90,16 @@ router.post('/contact', auth, contact);
 router.post('/services', auth, services);
 router.post('/category', auth, category);
 router.post('/blog', auth, blog);
-router.get('/view/services', auth, viewServices);
+router.get('/view/about', auth, viewAbout);
 router.get('/view/contacts', auth, viewContact);
 router.get('/view/category', auth, viewCategory);
 router.get('/view/services', auth, viewServices);
 router.get('/view/blog', auth, viewBlog);
-router.delete('/delete/portfolio', auth, deletePortfolio);
-router.delete('/delete/contact', auth, deleteContact);
-router.delete('/delete/category', auth, deleteCategory);
+router.delete('/delete/portfolio/:id', auth, deletePortfolio);
+router.delete('/delete/contact/:id', auth, deleteContact);
+router.delete('/delete/category/:id', auth, deleteCategory);
+router.patch('/edit/services/:id', auth, editServices);
+
 
 
 

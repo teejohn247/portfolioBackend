@@ -3,7 +3,7 @@ import Category from '../model/Category';
 
 const deleteCategory = async(req, res) => {
     try{
-        console.log(req.params._id);
+        console.log(req.params.id);
         // const admin = await Admin.findById(req.params._id);
         // console.log(admin)
         await Category.deleteOne({ _id: req.params.id});
