@@ -60,6 +60,19 @@ import viewAbout from '../controller/viewAbout';
 
 import auth from '../middleware/auth';
 import editServices from '../controller/editServices';
+import editBlog from '../controller/editBlog';
+import editCategory from '../controller/editCategory';
+import portfolio from '../controller/Portfolio';
+import viewPortfolio from '../controller/viewPortfolio';
+import deleteService from '../controller/delService';
+import education from '../controller/education';
+import viewEducation from '../controller/ViewEducation';
+import delEducation from '../controller/delEducation';
+import experience from '../controller/experience';
+import viewExperience from '../controller/viewExperience';
+import delExperience from '../controller/delExperience';
+import editExperience from '../controller/editExperience';
+import editEducation from '../controller/editEducation';
 // import adminBookings from '../controller/adminBookings';
 // import delAdmin from '../controller/delAdmin';
 // import userPassword from '../controller/userPassword';
@@ -88,17 +101,34 @@ router.post('/admin', adminLogin);
 router.post('/about', auth, about);
 router.post('/contact', auth, contact);
 router.post('/services', auth, services);
+router.post('/education', auth, education);
+router.post('/portfolio', auth, portfolio);
+router.post('/experience', auth, experience);
 router.post('/category', auth, category);
 router.post('/blog', auth, blog);
 router.get('/view/about', auth, viewAbout);
 router.get('/view/contacts', auth, viewContact);
 router.get('/view/category', auth, viewCategory);
+router.get('/view/education', auth, viewEducation);
 router.get('/view/services', auth, viewServices);
+router.get('/view/experience', auth, viewExperience);
+router.get('/view/portfolio', auth, viewPortfolio);
 router.get('/view/blog', auth, viewBlog);
 router.delete('/delete/portfolio/:id', auth, deletePortfolio);
 router.delete('/delete/contact/:id', auth, deleteContact);
 router.delete('/delete/category/:id', auth, deleteCategory);
+router.delete('/delete/service/:id', auth, deleteService);
+router.delete('/delete/education/:id', auth, delEducation);
+router.delete('/delete/experience/:id', auth, delExperience);
 router.patch('/edit/services/:id', auth, editServices);
+router.patch('/edit/blog/:id', auth, editBlog);
+router.patch('/edit/category/:id', auth, editCategory);
+router.patch('/edit/experience/:id', auth, editExperience);
+router.patch('/edit/education/:id', auth, editEducation);
+
+
+
+
 
 
 

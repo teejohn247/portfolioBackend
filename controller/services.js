@@ -10,15 +10,13 @@ dotenv.config();
 
 const services = async (req, res) => {
 
+  
     try{ 
-        const {images, title, description,link,category} = req.body;
+        const {} = req.body;
      
         let services = new Services({
-            images, 
-            title, 
-            description,
-            link,
-            category
+            service, 
+            description
         });
         console.log(services);
 
