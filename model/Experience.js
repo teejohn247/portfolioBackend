@@ -4,7 +4,7 @@ const ExperienceSchema = new mongoose.Schema({
     // PlaceOfWork, duration, description)
     PlaceOfWork:{
         type:String,
-        // required:true,
+        required:true,
     },
     duration:{
         type:String,
