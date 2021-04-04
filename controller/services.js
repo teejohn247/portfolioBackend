@@ -12,7 +12,7 @@ const services = async (req, res) => {
 
   
     try{ 
-        const {} = req.body;
+        const {service, description} = req.body;
      
         let services = new Services({
             service, 

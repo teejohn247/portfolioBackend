@@ -13,6 +13,7 @@ const experience = async (req, res) => {
     try{ 
         
         const {PlaceOfWork, duration, description} = req.body;
+        console.log(PlaceOfWork)
      
         let experience = new Experience({
             PlaceOfWork, 
