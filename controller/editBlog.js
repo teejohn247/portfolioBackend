@@ -4,10 +4,12 @@ import Blog from '../model/Blog';
 
 const editBlog = async (req, res) => {
   try {
-    const { id } = req.params;
+    // const { id } = req.params;
     const { blogLink } = req.body;
 
-        const blog = await Blog.findOne({_id: id});
+    
+
+        const blog = await Blog.findOne({field_id: 1});
         if(!blog){
             res.status(404).json({
                 status:404,

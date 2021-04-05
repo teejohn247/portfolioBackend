@@ -1,9 +1,14 @@
 import mongoose from 'mongoose';
 
 const BlogSchema = new mongoose.Schema({
+    field_id:{
+        type:Number,
+        default: 1
+    },
     blogLink:{
         type:String,
-        required:true
+        // default: "bloglink"
+        // required:true
     },
 });
 
