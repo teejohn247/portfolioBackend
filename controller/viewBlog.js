@@ -6,6 +6,8 @@ const viewBlog = async(req, res) => {
     // let limit = req.params.limit;
     try{
         const blogs = await Blog.find()
+        let blog = blogs[0]
+
         // .sort({date: -1})
         // .limit(limit * 1)
         // .skip((page - 1) * limit)
@@ -22,7 +24,7 @@ const viewBlog = async(req, res) => {
         }
         res.status(200).json({
             status:200,
-            blogs,
+            blog,
             // totalPages: Math.ceil(count / limit),
             // currentPage: page
         })
