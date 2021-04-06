@@ -124,7 +124,7 @@ router.delete('/delete/service/:id', auth, deleteService);
 router.delete('/delete/education/:id', auth, delEducation);
 router.delete('/delete/experience/:id', auth, delExperience);
 router.patch('/edit/services/:id', auth, editServices);
-router.patch('/edit/blog/:id', auth, editBlog);
+router.patch('/edit/blog', auth, editBlog);
 router.patch('/edit/category/:id', auth, editCategory);
 router.patch('/edit/experience/:id', auth, editExperience);
 router.patch('/edit/education/:id', auth, editEducation);
