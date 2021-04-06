@@ -21,6 +21,9 @@ const ContactSchema = new mongoose.Schema({
 
         // required:true,
     },
+    address:{
+        type:String,
+    },
     IGlink:{
         type:String,
         // default: "johndoe@gmail.com"

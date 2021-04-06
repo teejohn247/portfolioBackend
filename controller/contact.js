@@ -11,11 +11,12 @@ dotenv.config();
 const contact = async (req, res) => {
 
     try{ 
-        const {name, description, email, phone,  IGlink, twitterLink, facebookLink} = req.body;
+        const {name, description, email, phone, address,  IGlink, twitterLink, facebookLink} = req.body;
      
         let contact = new Contact({
             name, 
             description,
+            address,
             email, 
             phone,
             IGlink,

@@ -12,7 +12,7 @@ const editContact = async (req, res) => {
 
     try{ 
 
-        const {name, description, email, phone,  IGlink, twitterLink, facebookLink} = req.body;
+        const {name, description, email, phone, address,  IGlink, twitterLink, facebookLink} = req.body;
 
         const contact = await Contact.findOne({field_id: 1});
 
@@ -23,7 +23,7 @@ const editContact = async (req, res) => {
             })
             return
         }
-        contact.updateOne({ name, description, email, phone,  IGlink, twitterLink, facebookLink }, contact).then(
+        contact.updateOne({ name, description, address, email, phone,  IGlink, twitterLink, facebookLink }, contact).then(
             () => {
               res.status(200).json({
                 status:200,
