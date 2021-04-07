@@ -18,6 +18,9 @@ const PortfolioSchema = new mongoose.Schema({
     category:{
         type:String,
     },
+    categoryName:{
+        type:String,
+    },
 });
 
 const Portfolio = mongoose.model("portfolio", PortfolioSchema);
