@@ -1,12 +1,12 @@
 import dotenv from 'dotenv';
-import Services from '../model/Services';
+import Portfolio from '../model/Portfolio';
 
 const deletePortfolio = async(req, res) => {
     try{
         console.log(req.params.id);
         // const admin = await Admin.findById(req.params._id);
         // console.log(admin)
-        await Services.deleteOne({ _id: req.params.id});
+        await Portfolio.deleteOne({ _id: req.params.id});
         res.status(200).json({
             status:200,
             msg:'Portfolio Deleted'
