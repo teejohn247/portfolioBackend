@@ -12,39 +12,79 @@ dotenv.config();
 
 const portfolio = async (req, res) => {
 
-    try{ 
-        const {images, title, description,link,category} = req.body;
-        const cat = await Category.findOne({_id: category})
+    try {
+        const { images, title, description, link, category } = req.body;
+        const cat = await Category.findOne({ _id: category })
+        const port = await Portfolio.findOne({ category: category })
+
+        if (!category || !cat) {
+            res.status(400).json({
+                status: 400,
+                err: 'category is required'
+            })
+
+        }
+
 
         console.log(cat)
 
-        const {categoryName}= cat
+        const { categoryName } = cat
 
 
-     
-        let portfolio = new Portfolio({
-            images, 
-            title, 
-            description,
-            link,
-            category,
-            categoryName
+        if (!port) {
+            let portfolio = new Portfolio({
+                // images, 
+                // title, 
+                // description,
+                // link,
+                category,
+                categoryName
+            });
+            console.log(portfolio);
+            await portfolio.save();
+            await Portfolio.findOneAndUpdate({ category: category }, { $addToSet: { items: { description: description, title: title, link: link, images: images } } },
+                { upsert: true, new: true },
+                function (
+                    err,
+                    portfolios
+                ) {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        //  let portfolios =  Portfolio.findOne({category: category})
+                        res.status(200).json({
+                            status: 200,
+                            portfolios
+                        })
+                    }
+                })
 
-        });
-        console.log(portfolio);
+        } else {
 
-        await portfolio.save();
-        
-        res.status(200).json({
-             status:200,
-             portfolio
-        })
-    }catch(err){
-        res.status(500).json({
-            status:500,
-            err:'server error'
-        })
+            await Portfolio.findOneAndUpdate({ category: category }, { $addToSet: { items: { description: description, title: title, link: link, images: images } } },
+                { upsert: true, new: true },
+                function (
+                    err,
+                    portfolios
+                ) {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        //  let portfolios =  Portfolio.findOne({category: category})
+                        res.status(200).json({
+                            status: 200,
+                            portfolios
+                        })
+                    }
+                })
+            }
+
+        } catch (err) {
+            res.status(500).json({
+                status: 500,
+                err: 'server error'
+            })
+        }
     }
-}
 
 export default portfolio;

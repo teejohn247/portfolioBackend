@@ -1,26 +1,32 @@
 import mongoose from 'mongoose';
 
 const PortfolioSchema = new mongoose.Schema({
-    // mages, title, description,link,category
-    images:{
-        type:Array,
-    },
-    title:{
-        type:String,
-        required:true,
-    },
-    description:{
-        type:String,
-    },
-    link:{
-        type:String,
-    },
+
     category:{
         type:String,
+        required: true
+        
     },
     categoryName:{
         type:String,
     },
+    items: [
+        {
+        description: {
+          type: String,
+        },
+        title: {
+            type: String,
+        },
+        link: {
+            type: String,
+        },
+        images:{
+            type:Array,
+        },
+      }
+    ]
+  
 });
 
 const Portfolio = mongoose.model("portfolio", PortfolioSchema);
