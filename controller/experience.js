@@ -12,12 +12,13 @@ const experience = async (req, res) => {
   
     try{ 
         
-        const {PlaceOfWork, duration, description} = req.body;
+        const {PlaceOfWork, description, start, end} = req.body;
         console.log(PlaceOfWork)
      
         let experience = new Experience({
             PlaceOfWork, 
-            duration, 
+            start,
+            end, 
             description
         });
         console.log(experience);

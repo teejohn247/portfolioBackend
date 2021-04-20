@@ -6,7 +6,7 @@ const editEducation = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const {school, year, duration, description} = req.body;
+    const {school, year, start, end, description} = req.body;
 
         const education = await Education.findOne({_id: id});
 
@@ -17,7 +17,7 @@ const editEducation = async (req, res) => {
             })
             return
         }
-        education.updateOne({ school: school, year: year, duration: duration, description: description }, education).then(
+        education.updateOne({ school: school, year: year, start: start, end: end, description: description }, education).then(
             () => {
               res.status(200).json({
                 status:200,

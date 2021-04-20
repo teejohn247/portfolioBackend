@@ -11,12 +11,13 @@ dotenv.config();
 const education = async (req, res) => {
   
     try{ 
-        const {school, year, duration, description} = req.body;
+        const {school, year, description, start, end} = req.body;
      
         let education = new Education({
             school,
              year,
-             duration,
+             start, 
+             end,
              description
         });
         console.log(education);

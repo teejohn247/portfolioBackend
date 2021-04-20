@@ -6,7 +6,7 @@ const deletePortfolio = async(req, res) => {
         console.log(req.params.id);
         // const admin = await Admin.findById(req.params._id);
         // console.log(admin)
-        await Portfolio.deleteOne({ _id: req.params.id});
+        await Portfolio.findByIdAndDelete(req.params.id);
         res.status(200).json({
             status:200,
             msg:'Portfolio Deleted'

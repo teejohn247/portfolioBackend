@@ -9,7 +9,10 @@ const EducationSchema = new mongoose.Schema({
     year:{
         type:String,
     },
-    duration:{
+    start:{
+        type:String,
+    },
+    end:{
         type:String,
     },
     description:{

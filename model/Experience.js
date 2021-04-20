@@ -6,7 +6,10 @@ const ExperienceSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    duration:{
+    start:{
+        type:String,
+    },
+    end:{
         type:String,
     },
     description:{
