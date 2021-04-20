@@ -117,7 +117,7 @@ router.get('/view/services', viewServices);
 router.get('/view/experience', viewExperience);
 router.get('/view/portfolio',  viewPortfolio);
 router.get('/view/blog', viewBlog);
-router.delete('/delete/portfolio/:id', auth, deletePortfolio);
+router.delete('/delete/portfolio/:cat_id/:portfolio_id', auth, deletePortfolio);
 router.delete('/delete/contact/:id', auth, deleteContact);
 router.delete('/delete/category/:id', auth, deleteCategory);
 router.delete('/delete/service/:id', auth, deleteService);
