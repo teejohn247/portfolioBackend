@@ -119,6 +119,9 @@ router.get('/view/portfolio',  viewPortfolio);
 router.get('/view/blog', viewBlog);
 router.delete('/delete/portfolio/:cat_id/:portfolio_id', auth, deletePortfolio);
 router.delete('/delete/contact/:id', auth, deleteContact);
+
+router.patch('/change/password', auth, adminPassword);
+
 router.delete('/delete/category/:id', auth, deleteCategory);
 router.delete('/delete/service/:id', auth, deleteService);
 router.delete('/delete/education/:id', auth, delEducation);
