@@ -74,6 +74,7 @@ import delExperience from '../controller/delExperience';
 import editExperience from '../controller/editExperience';
 import editEducation from '../controller/editEducation';
 import editContact from '../controller/editContact';
+import feedBack from '../controller/feedBack';
 // import adminBookings from '../controller/adminBookings';
 // import delAdmin from '../controller/delAdmin';
 // import userPassword from '../controller/userPassword';
@@ -101,6 +102,8 @@ router.post('/admin/signup', admin);
 router.post('/admin', adminLogin);
 router.post('/about', auth, about);
 router.post('/contact', auth, contact);
+router.post('/feedback', feedBack);
+
 router.patch('/edit/contact', auth, editContact);
 
 router.post('/services', auth, services);

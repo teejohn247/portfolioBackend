@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import Contact from '../model/Contact';
 
+  
 
 dotenv.config();
 
@@ -26,7 +27,7 @@ const contact = async (req, res) => {
         console.log(contact);
 
         await contact.save();
-        
+
         res.status(200).json({
              status:200,
              contact
